@@ -3,7 +3,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class AgentBase extends Model
 {
-    protected $table = 'user';
+    protected $table = 'agent_base';
 }
