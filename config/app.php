@@ -4,15 +4,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Name
-    |--------------------------------------------------------------------------
+    | Application Name |--------------------------------------------------------------------------
     |
     | This value is the name of your application. This value is used when the
     | framework needs to place the application's name in a notification or
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'fuck-hei-zhong-jie'),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,6 +122,10 @@ return [
     'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
+
+
+    // 自定义配置
+    'baidu_map_app_key' => env('BAIDU_MAP_APP_KEY', '11dd45256dbbd377dcee3dbdaead1917'),
 
     /*
     |--------------------------------------------------------------------------

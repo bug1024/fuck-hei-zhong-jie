@@ -16,14 +16,13 @@ class BlackListController extends Controller {
         $offset = (int) $request->input('offset', 0);
         $limit = (int) $request->input('limit', 20);
 
-        $agents = AgentBase::where('status', 1)
-            ->where('city', $city)
-            ->whereRaw("name like '%$keyword%' or mobile like '%$keyword%'")
-            ->orderBy('add_time', 'desc')
-            ->offset($offset)
-            ->limit($limit)->get();
-        $json = (string) $agents;
-        echo $agents;
+        $agents = AgentBase::search($city, $keyword, $offset, $limit);
+        $app_key = config('app.baidu_map_app_key');
+
+        return view('map', [
+            'agents' => $agents,
+            'app_key' => $app_key
+        ]);
     }
 
 }
