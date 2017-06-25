@@ -12,5 +12,6 @@
 */
 
 Route::get('/', [
-    'uses' => 'BlackListController@index',
+    'uses' => 'BlackListController@search',
 ]);
+

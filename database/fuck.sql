@@ -10,6 +10,7 @@ create table if not exists agent_base(
     city int not null default 0 comment '城市',
     district int not null default 0 comment '区县',
     garden int not null default 0 comment '小区',
+    pos varchar(50) not null default '' comment '位置pos',
     add_time timestamp not null default CURRENT_TIMESTAMP comment '创建时间',
     update_time timestamp not null default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP comment '更新时间',
     primary key(id)
