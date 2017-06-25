@@ -15,3 +15,7 @@ Route::get('/', [
     'uses' => 'BlackListController@search',
 ]);
 
+Route::get('/history/{agent_id}', [
+    'uses' => 'BlackListController@history',
+]);
+

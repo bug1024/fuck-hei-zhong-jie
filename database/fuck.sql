@@ -65,6 +65,7 @@ create table if not exists users(
 create table if not exists comments(
     id int unsigned not null auto_increment,
     user_id int unsigned not null default 0 comment '用户id',
+    agent_id int unsigned not null default 0 comment '中介id',
     content varchar(2048) not null default '' comment '评论内容',
     status tinyint not null default 0 comment '状态',
     reply_id int unsigned not null default 0 comment '回复评论id',

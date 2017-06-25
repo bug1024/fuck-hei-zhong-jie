@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\AgentBase;
+use App\Comment;
 use Illuminate\Http\Request;
 
 class BlackListController extends Controller {
@@ -22,6 +23,18 @@ class BlackListController extends Controller {
         return view('map', [
             'agents' => $agents,
             'app_key' => $app_key
+        ]);
+    }
+
+    /**
+     * 黑历史
+     */
+    public function history($agent_id) {
+        $agent = AgentBase::find($agent_id);
+        $comments = Comment::where('agent_id', $agent_id)->take(100)->get();
+        return view('history', [
+            'agent' => $agent,
+            'comments' => $comments
         ]);
     }
 
