@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div id="allmap"></div>
+    <div id="allmap" data-map="{{ json_encode($agents)}}"></div>
 </body>
 
 <script type="text/javascript">
@@ -25,6 +25,11 @@
     map.setCurrentCity("北京");
     // 开启鼠标滚轮缩放
     map.enableScrollWheelZoom(true);
+    // 编写自定义函数,创建标注
+    function addMarker(point){
+      var marker = new BMap.Marker(point);
+      map.addOverlay(marker);
+    }
 </script>
 
 </html>
