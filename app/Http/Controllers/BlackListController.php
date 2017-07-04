@@ -38,5 +38,14 @@ class BlackListController extends Controller {
         ]);
     }
 
+    public function addComment() {
+        $comments = Comment::add([
+            'user_id' => 1,
+            'agent_id' => 1,
+            'content' => 'fuck',
+            'add_time' => date('Y-m-d H:i:s'),
+        ]);
+    }
+
 }
 
